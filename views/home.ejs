@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Crypto News</title>
+</head>
+<body>
+    <%- include("./partials/navbar.ejs") %>
+    <%= JSON.stringify(locals.user) %>
+    <%- include('./partials/script.ejs') %>
+</body>
+
+</html>
