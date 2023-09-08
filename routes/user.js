@@ -17,7 +17,7 @@ router.post("/signup",async (req,res)=>{
     password
    })
    console.log(req.body);
-   return res.redirect("/")
+   return res.redirect("signin")
 })
 
 
@@ -40,6 +40,11 @@ router.post("/signin", async (req, res) => {
     console.error(error);
     return res.status(401).render("signin", { error: "Invalid credentials" });
   }
+});
+
+router.get("/logout", (req, res) => {
+  return res.clearCookie("token").redirect("/user/signin");
+
 });
 
 module.exports=router
